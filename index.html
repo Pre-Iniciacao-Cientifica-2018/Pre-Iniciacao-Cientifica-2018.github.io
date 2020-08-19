@@ -1,48 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ept-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #myChart {
-            width: 70%;
-            height: auto;
-        }
-    </style>
+    <title>ConCO2 - Concentração de Gás Carbônico</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <canvas id="myChart"></canvas>
-<script>
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["11h", "12h", "13h", "14h"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-auto" href="#">
+                <img src="img/logoMenu.png" height="" width="250">
+            </a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item lihome">
+                        <a class="nav-link" href="#">INÍCIO</a>
+                    </li>
+                    <li class="nav-item lico2">
+                        <a class="nav-link" href="#">O GÁS CARBÔNICO</a>
+                    </li>
+                    <li class="nav-item liebook">
+                        <a class="nav-link" href="#">E-BOOK</a>
+                    </li>
+                    <li class="nav-item limedicao">
+                        <a class="nav-link" href="#">MEDIÇÃO</a>
+                    </li>
+                    <li class="nav-item ligraficos">
+                        <a class="nav-link" href="#">GRÁFICO</a>
+                    </li>
+                    <li class="nav-item lianalise">
+                        <a class="nav-link" href="#">ANÁLISE</a>
+                    </li>
+                    <li class="nav-item lisobre">
+                        <a class="nav-link" href="#">SOBRE</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row row-content first-row align-items-center" id="intro">
+            <div class="col-12 col-sm-5 offset-sm-1">
+                <div class="d-none d-sm-block text-center">
+                    <img class="img-fluid grafico-logo" src="img/grafico.png" alt="Gráfico">
+                </div>
+            </div>
+            <div class="col-12 col-sm-5">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid mx-auto texto-logo" src="img/textLogo.png" alt="Logo texto">
+                </div>
+                <h1 class="text-center">Concentração de CO<sub>2</sub> na atmosfera com gráficos em tempo real.</h1>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="btn download">DOWNLOAD DO APP</a>
+                </div>
+                <p class="text-center">Um projeto desenvolvido por:</p>
+                <div class="d-flex align-items-center">
+                    <img class="ml-auto mr-2 d-block img-cred" src="img/logoUsp.png" alt="Logo USP">
+                    <img class="mr-auto ml-2 d-block img-cred" src="img/logoEtesp.png" alt="Logo ETESP">
+                </div>
+            </div>
+        </div>
+        <div class="row row-content bg-1" id="sobreco2">
+            <div class="col-10 offset-1">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="text-center">O GÁS CARBÔNICO</h2>
+                        <p class="mt-5 text-justify">O carbono é um elemento básico na composição dos organismos,
+                            tornando-o indispensável para a vida no planeta. Este elemento é estocado na atmosfera, nos
+                            oceanos, solos rochas sedimentares e está presente nos combustíveis fósseis. Contudo, o
+                            carbono não fica fixo em nenhum desses estoques. Existe uma série de interações por meio das
+                            quais ocorre a transferência de carbono de um estoque para outro. Muitos organismos nos
+                            ecossistemas terrestres e nos oceanos, como as plantas, absorvem o carbono encontrado na
+                            atmosfera na forma de dióxido de carbono (CO<sub>2</sub>). Esta absorção se dá através do
+                            processo de fotossíntese. Por outro lado, os vários organismos, tanto plantas como animais,
+                            libertam dióxido de carbono para a atmosfera mediante o processo de respiração. Existe ainda
+                            o intercâmbio de dióxido de carbono entre os oceanos e a atmosfera por meio da difusão.</p>
+                    </div>
+                    <img class="d-none d-sm-block img-fluid align-self-center img-sobre" src="img/sobre.png" alt="CO2">
+                </div>
+            </div>
+            <img class="trans1" src="img/trans1.png">
+        </div>
+        <div class="row row-content bg-2" id="ebook">
+            <div class="col-10 offset-1">
+                <div class="media">
+                    <img class="d-none d-lg-block img-fluid align-self-center img-ebook" src="img/teste.png">
+                    <div class="media-body">
+                        <h2 class="text-center">E-BOOK</h2>
+                        <p class="mt-5 text-justify">Como forma de conscientização e democratização do conhecimento,
+                            desenvolvemos um ebook para abordar a importância do CO2 e dos demais gases de efeito estufa
+                            e o significado e implicações de suas diferentes concentrações na atmosfera para nós,
+                            seres-humanos. Através da leitura do ebook será possível uma melhor análise e interpretação
+                            dos dados coletados pelo medidor colocado na marginal Pinheiros. O ebook é gratuito e de
+                            livre acesso e compartilhamento para todos.</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-ebook mr-3 mt-3">LEIA ONLINE</a>
+                            <a href="#" class="btn btn-ebook ml-3 mt-3">DOWNLOAD DO E-BOOK</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <img class="trans1" src="img/trans2.png">
+        </div>
+        <div class="row row-content bg-1" id="medicao">
+            <div class="col-10 offset-1">
+                <div class="media">
+                    <div class="mr-0 media-body">
+                        <h2 class="text-center">COMO É FEITA A MEDIÇÃO?</h2>
+                        <p class="mt-5 text-justify">Um sensor de dióxido de carbono serve para medir a sua quantidade
+                            na forma gasosa ou líquida. Esses sensores são muito utilizados em diversos campos
+                            científicos e indústrias como instrumento de estudo ou produto, como por exemplo ar
+                            condicionados que medem a qualidade do ar e usam a quantidade de gás carbônico como
+                            parâmetro ou até mesmo determinam a quantidade de pessoas em um ambiente devida a quantidade
+                            desse gás na habitação.</p>
+                        <p class="mt-0 text-justify">O aparelho tem três componentes principais: a fonte de luz, uma
+                            ferramenta que recebe a luz emitida e um detector. Durante a medição, a quantidade de luz
+                            que chega no lado rebecebimento varia de acordo com a concentração de gás carbônico presente
+                            no sensor, ou seja, quanto mais CO2 dentro no ambiente, menos luz será recebida para a
+                            medição. O resultado então é obtido em ppm que é a concentração de partículas por milhão.
+                        </p>
+                    </div>
+                    <img class="d-none d-lg-block ml-5 img-fluid align-self-center img-funcionamento"
+                        src="img/funcionamento.png" alt="CO2">
+                </div>
+            </div>
+            <img class="trans1" src="img/trans3.png">
+        </div>
+        <div class="row row-content" id="grafico">
+            <div class="col-10 offset-1">
+                <h2 class="text-center">GRÁFICO EM TEMPO REAL DA [CO<sub>2</sub>] NA ATMOSFERA</h2>
+            </div>
+            <img class="trans1" src="img/trans4.png">
+        </div>
+        <div class="row row-content bg-1" id="analise">
+            <div class="col-10 offset-1">
+                <h2 class="text-center">ANÁLISE DA [CO<sub>2</sub>]</h2>
+            </div>
+        </div>
+        <div class="row row-cards bg-1">
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Maior concentração do dia</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração do dia</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Maior concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-3">
+                <div class="card mt-4">
+                    <div class="card-header">Menor concentração da semana</div>
+                    <div class="card-body">
+                        <p class="card-text">999.99 ppm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <p class="params mt-5">Valores de referência, segundo a CETESB - baixo: abaixo de 999 ppm; médio: entre
+                    999
+                    ppm e 999 ppm; alto: acima de 999 ppm.</p>
+                <p class="params">Para mais dados de análise, baixe o nosso aplicativo!</p>
+            </div>
+            <img class="trans1" src="img/trans1.png">
+        </div>
+        <div class="row row-content sobre bg-2" id="sobre">
+            <div class="col-10 offset-1">
+
+            </div>
+            <div class="col-12 col-md-4 offset-md-1">
+                <h2 class="text-center">SOBRE NÓS</h2>
+                <p class="mt-5">O projeto ConCO<sub>2</sub> é resultado de um trabalho de pré-inciação-científica
+                    idealizado pelo professor Bernardo Luis Rodrigues de Andrade, da POLI-USP, desenvolvido por alunos
+                    da Escola Técnica Estadual de São Paulo (ETESP), tendo sido iniciado em setembro de 2018 e
+                    desenvolvido ao longo de 1 ano. O principal objetivo do projeto é facilitar o acesso a dados e
+                    informações sobre a emissão de gases de efeito estufa, principalmente o CO<sub>2</sub>, para a
+                    população geral. Para isso foi desenvolvido um site, um e-book e uma estação de medição de
+                    CO<sub>2</sub>, colocada na Raia Olímpica da USP (Cidade Universitária) na Marginal Pinheiros.</p>
+                <br>
+                <p class="subtituloSobre">Por que na Marginal Pinheiros? </p>
+                <p>O equipamento é colocado na Marginal Pinheiros por dois principais fatores, entre eles estão:</p>
+                <p>- A facilidade para manutenção, realizada pela USP</p>
+                <p>- Uma amostragem diversificada e representativa</p><br>
+            </div>
+            <div class="col-12 col-md-4">
+                <p class="subtituloSobre">Qual a importância de se medir os níveis de CO<sub>2</sub>?</p>
+                <p>- Monitoramento do comportamento dos gases na atmosfera;</p>
+                <p>- Obtenção de dados quantitativos para a análise de qualidade de ar em determinado período de tempo;
+                </p>
+                <p>- Prevenção de doenças causadas pela alta concentração de gases.</p> <br>
+                <p class="subtituloSobre">Possui mais alguma dúvida? Nos escreva sobre:</p>
+                <textarea class="form-control" rows="10"></textarea>
+            </div>
+            <div class="col-12 col-md-3">
+                <p class="subtituloSobre">Lista de alunos participantes:</p>
+                <p>Bianca Tiemi Kuraoka Uemura</p>
+                <p>Brendon Christian Moreira Angelo</p>
+                <p>Camilla Rosa Freire Sousa</p>
+                <p>Caroline Victoria Santos Soares</p>
+                <p>Ederson Gonzaga de Melo</p>
+                <p>Gabriel Almeida Anunciato</p>
+                <p>Gabriel Braga Lagrotaria de Oliveira</p>
+                <p>Gabriel Gomes Gameiro</p>
+                <p>Gustavo Palma dos Santos</p>
+                <p>Henry Silva Castelli</p>
+                <p>Letícia Rodrigues Mendes</p>
+                <p>Lucas Costa Mignoli Ferreira da Silva</p>
+                <p>Mariana Toyshima Candermo </p>
+                <p>Matheus Henrique Maello</p>
+                <p>Paula Kaori Tamai</p>
+                <p>Pedro Buczinski Lages de Carvalho</p>
+                <p>Romário Gomes de Souza </p>
+                <p>Stéfano Kenji Fernandes Tamanaha</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <img class="mx-auto d-block img-fluid" src="img/logoUspEtesp.png" alt="">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.lisobre').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#sobre').offset().top
+                }, 2000);
+            });
+
+            $('.lianalise').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#analise').offset().top
+                }, 2000);
+            });
+
+            $('.ligraficos').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#grafico').offset().top
+                }, 2000);
+                console.log('asdasa');
+            });
+
+            $('.limedicao').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#medicao').offset().top
+                }, 2000);
+            });
+
+            $('.liebook').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#ebook').offset().top
+                }, 2000);
+            });
+
+            $('.lico2').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#sobreco2').offset().top
+                }, 2000);
+            });
+
+            $('.lihome').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('#intro').offset().top
+                }, 2000);
+            });
+
+        });
+    </script>
 </body>
+
 </html>
